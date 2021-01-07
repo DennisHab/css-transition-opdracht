@@ -47,18 +47,17 @@ body {
     top: 20px;
 }
 
-
-
 .container:hover #menu {
     background-color: white;
     position: relative;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-
 }
 
 .container:hover #menu::before,
 .container:hover #menu::after {
+    left: 0;
+    top: 0;
     background-color: #D84282;
     display: block;
     content: "";
@@ -68,15 +67,10 @@ body {
 }
 
 .container:hover #menu::before {
-    left: 0;
-    top: 0;
     transform: rotate(45deg);
-
 }
 
 .container:hover #menu::after {
-    left: 0;
-    top: 0;
     transform: rotate(135deg);
 }
 
