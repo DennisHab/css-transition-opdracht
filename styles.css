@@ -2,17 +2,62 @@
     --menu-bar-width: 60px;
     --menu-bar-height: 10px;
 }
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    display: inline-block;
+    transition: transform 400ms ease-in-out, top 400ms ease-in-out;
+    padding: 20px;
+    padding-left: 5px ;
+    padding-right: 5px;
 
-#menu {
+}
+
+.container #menu {
     background-color: #D84282;
     position: relative;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-    margin: 100px;
+    transition: 600ms ease-in-out, top 600ms ease-in-out;
+
 }
 
-#menu::before,
-#menu::after {
+.container #menu::before,
+.container #menu::after {
+    background-color: #D84282;
+    display: block;
+    content: "";
+    width: var(--menu-bar-width);
+    height: var(--menu-bar-height);
+    position: absolute;
+    transition: 600ms ease-in-out, top 600ms ease-in-out;
+}
+
+.container #menu::before {
+    left: 0;
+    top: -20px;
+}
+
+.container #menu::after {
+    left: 0;
+    top: 20px;
+}
+
+.container:hover #menu {
+    background-color: white;
+    position: relative;
+    width: var(--menu-bar-width);
+    height: var(--menu-bar-height);
+}
+
+.container:hover #menu::before,
+.container:hover #menu::after {
+    left: 0;
+    top: 0;
     background-color: #D84282;
     display: block;
     content: "";
@@ -21,13 +66,15 @@
     position: absolute;
 }
 
-#menu::before {
-    left: 0;
-    top: -20px;
+.container:hover #menu::before {
+    transform: rotate(45deg);
 }
 
-#menu::after {
-    left: 0;
-    top: 20px;
+.container:hover #menu::after {
+    transform: rotate(135deg);
 }
+
+
+
+
 
